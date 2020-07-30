@@ -1,0 +1,2 @@
+class SerializersController < ApplicationController
+end
