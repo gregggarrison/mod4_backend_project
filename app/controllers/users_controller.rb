@@ -11,14 +11,7 @@ class UsersController < ApplicationController
     end
 
     def create
-      @user = User.create(user_params
-        # username: params[:username],
-        # password: params[:password],
-        # age: params[:age],
-        # sex: params[:sex],
-        # height: params[:height],
-        # weight: params[:weight]
-        )
+      @user = User.create(user_params)
         if @user.valid?
         @token = encode_token(user_id: @user.id)
         render json: {user: @user, meals: @user.meals, jwt: @token}, status: :created
